@@ -1,22 +1,30 @@
-<% @songs.each do |song| %>
-<table>
- <thead>
+<h2>Songs Index</h2><% @songs.each do |song| %>
+<table border=1 align=center width=100%>
+ <thead align=center>
   <tr>
     <th>Title</th>
     <th>Year Released</th>
     <th>Released</th>
     <th>Genre</th>
     <th>Artist Name</th>
+    <th>Other</th>
+    <th>Other</th>
+    <th>Other</th>
   </tr>
  </thead>
- <tbody>
+ <tbody align=center>
   <tr>
     <td><%= song.title %></td>
     <td><%= song.release_year %></td>
-    <td><%= song.released %></td>
+    <td><%= song.released == true ? "Yes" : "No" %></td>
     <td><%= song.genre %></td>
     <td><%= song.artist_name %></td>
+    <td><%= link_to "Edit Song", edit_song_path(song) %></td>
+    <td><%= link_to "View Song", song_path(song) %></td>
+    <td><%= button_to "Delete Song", song_path(song), method: :delete %></td>
   </tr>
   </tbody>
 </table>
 <% end %>
+<br><br>
+<%= link_to 'New Song', new_song_path %> 
