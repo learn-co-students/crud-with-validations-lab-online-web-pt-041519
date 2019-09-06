@@ -13,7 +13,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params(:title, :released, :release_year, :artist_name, :genre))
+    @song = Song.new(song_params)
 
     if @song.valid?
       @song.save
@@ -27,7 +27,7 @@ class SongsController < ApplicationController
   end
 
   def update
-    @song.update((song_params(:title, :released, :release_year, :artist_name, :genre)))
+    @song.update(song_params)
 
     if @song.errors.any?
       render :edit
@@ -44,8 +44,8 @@ class SongsController < ApplicationController
 
   private
 
-	def song_params(*args)
-		params.require(:song).permit(*args)
+	def song_params
+		params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
   end
 
   def set_song

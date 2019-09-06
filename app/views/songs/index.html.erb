@@ -4,6 +4,7 @@
     <tr>
       <th>Title</th>
       <th>Artist</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +12,11 @@
       <tr>
         <td><%= link_to(song.title, song_path(song)) %></td>
         <%= content_tag(:td, song.artist_name) %>
+        <td><%= link_to 'Edit', edit_song_path(song) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br /><br />
+<%= link_to "Create new song", new_song_path %>

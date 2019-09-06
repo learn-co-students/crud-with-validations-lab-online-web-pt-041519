@@ -6,4 +6,6 @@
 <% end %>
 </ul>
 
-<%= link_to "Edit", edit_song_path(@song) %> <%= link_to "Back", songs_path %> <%= button_to "Delete", @song, method: :delete %>
+<%= link_to "Edit", edit_song_path(@song) %> | <%= link_to "Back", songs_path %> 
+
+<br /><br /><%= button_to "Delete", @song, method: :delete %>
