@@ -12,7 +12,15 @@
       <tr>
         <td><%= link_to(song.title, song_path(song)) %></td>
         <%= content_tag(:td, song.artist_name) %>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %> | 
+
+        <!-- Doesn't work -->
+        <%= link_to 'Delete', song, method: :delete, data: { confirm: "Are you sure you want to delete?" } %> | 
+	  
+        <!-- Does work -->
+    	  <%= button_to "Delete", song, method: :delete %>
+
+       </td>
       </tr>
     <% end %>
   </tbody>
