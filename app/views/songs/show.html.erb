@@ -1,0 +1,13 @@
+
+<h1><%= @song.title %></h1>
+
+
+<% @song.attributes.each do |a| %>
+   <%= a.first %>- <%= a.last %>
+<% end %>
+
+<%= link_to "Edit", edit_song_path(@song) %>  <br>
+<%= link_to "Back", songs_path %> <br>
+
+<%= button_to "Delete", @song, method: :delete %>  
+<!-- i don't like this lab -->
