@@ -1,5 +1,7 @@
-<% @songs.each do |song| %>
-<ul>
-    <li><%= link_to song.title, song_path(song) %></li>
-</ul>    
-<% end %>
+<table>
+    <tbody>
+        <% @songs.each do |song| %>
+            <tr><%= link_to song.title, song_path(song) %></tr>
+        <% end %>
+    </tbody>
+</table>
