@@ -1,0 +1,17 @@
+<h1>This is the index view</h1>
+<table>
+  <thead>
+    <tr>
+      <th>song name</th>
+      <th>artist name</th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= @songs.each do |s| %>
+        <tr>
+          <td><%= s.title %></td>
+          <td><%= s.artist_name %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
