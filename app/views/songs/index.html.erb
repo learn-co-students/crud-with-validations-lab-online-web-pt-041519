@@ -1,0 +1,12 @@
+<h2>All Songs</h2>
+
+<%= link_to 'Add New Song', new_song_path %><br>
+
+<tbody>
+  <% @songs.each do |s| %>
+   <tr><%= s.title %></tr>
+     <%= link_to 'View', song_path(s) %>
+     <%= link_to 'Edit', edit_song_path(s) %>
+  <% end %>
+</tbody>
+
